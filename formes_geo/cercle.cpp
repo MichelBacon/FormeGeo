@@ -24,3 +24,15 @@ int Cercle::getRayon() const
 {
 	return rayon;
 }
+
+float Cercle::calculerperimetre() {
+
+	return (2 * Pi*rayon);
+
+}
+
+float Cercle::calculerAire() {
+
+	return (Pi * (rayon^2));
+
+}

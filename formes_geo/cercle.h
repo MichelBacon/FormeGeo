@@ -10,10 +10,15 @@ class Cercle:public Figure
 	Cercle();
 	Cercle(int x, int y, int rayon);
 	Cercle(const Cercle&);
+	virtual ~Cercle();
+
     virtual void setRayon(int);
 	virtual int getRayon() const;
 
 	virtual float calculerperimetre();
 	virtual float calculerAire();
+
+	virtual void Selectionner(int, int);
+	
 };
 #endif

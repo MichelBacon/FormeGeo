@@ -284,8 +284,17 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 		 {
 			 Graphics^ objetGraphique = CreateGraphics();
 			 Pen^ crayon;
-			crayon = gcnew Pen(Color::OrangeRed);		
-
+					
+			if (figureCourante->EstSelectionne() == true) {
+			
+				crayon = gcnew Pen(Color::OrangeRed);
+			
+			}
+			else 
+			{
+				crayon = gcnew Pen(Color::BlueViolet);
+			
+			}
 		
 			//donnez les bonnes valeurs à ces variables
 			//vous devez utiliser les valeurs qui se trouvent dans figureCourante
@@ -294,7 +303,9 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 			int rayon = figureCourante->getRayon();
 			int cote = figureCourante->getCote();
 
-			if (comboFigure->SelectedIndex == 1)
+			
+
+			if (cote!=0)
 			 {
 				 objetGraphique->DrawRectangle(crayon, x, y, cote, cote);
 			 }
@@ -339,7 +350,19 @@ private: System::Void MyForm_MouseClick(System::Object^  sender, System::Windows
 			 figureCourante = lesFigures.ObtenirFigure(cptFigure);
 			 while (figureCourante != NULL)
 			 {
+				 figureCourante->Deselectionner();
+				 figureCourante->Selectionner(e->X, e->Y);
 
+				 if (figureCourante->EstSelectionne() == true) {
+				 
+					 textX->Text = figureCourante->getX().ToString();
+					 textY->Text = figureCourante->getY().ToString();
+					 textCote->Text = figureCourante->getCote().ToString();
+					 textRayon->Text = figureCourante->getRayon().ToString();
+				 
+				 }
+				 
+				 
 
 				 cptFigure++;
 				 figureCourante = lesFigures.ObtenirFigure(cptFigure);
@@ -353,7 +376,17 @@ private: System::Void btnModifie_Click(System::Object^  sender, System::EventArg
 			 figureCourante = lesFigures.ObtenirFigure(cptFigure);
 			 while (figureCourante != NULL)
 			 {
+				 if (figureCourante->EstSelectionne() == true) {
+				 
+					figureCourante->setX(Convert::ToInt32(textX->Text));   
+					figureCourante->setY(Convert::ToInt32(textY->Text));
+					figureCourante->setCote(Convert::ToInt32(textCote->Text));
+					figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
 
+				 }
+					
+				 
+				 
 
 				 cptFigure++;
 				 figureCourante = lesFigures.ObtenirFigure(cptFigure);

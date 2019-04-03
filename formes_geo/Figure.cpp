@@ -21,6 +21,12 @@ Figure::Figure(const Figure& inFigure)
 	estSelectionne = inFigure.estSelectionne;
 }
 
+Figure::~Figure() {
+
+
+
+}
+
 int Figure::getX() const
 {
 	return x;
@@ -78,17 +84,25 @@ int Figure::getRayon() const
 	return 0;
 }
 
-float Figure::calculerperimetre() {
+//float Figure::calculerperimetre() {
+//
+//	return 0;
+//
+//}
+//
+//float Figure::calculerAire() {
+//
+//	return 0;
+//
+//}
 
-	return 0;
+//void Figure::Selectionner(int, int) {
+//
+//	
+//
+//}
 
-}
 
-float Figure::calculerAire() {
-
-	return 0;
-
-}
 
 
 

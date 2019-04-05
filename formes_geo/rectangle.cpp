@@ -59,3 +59,8 @@ void FormeRectangle::selectionner(int inX,int inY)
 
 		
 }
+
+string FormeRectangle::getType() const
+{
+	return "FormeRectangle";
+}

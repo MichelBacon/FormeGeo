@@ -307,6 +307,8 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 			 textY->Text = "0";
 			 textCote->Text = "0";
 			 textRayon->Text = "0";
+			 txtRectLargeur->Text = "0";
+			 txtRectLongueur->Text = "0";
 		 }
 
 private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs^  e) {

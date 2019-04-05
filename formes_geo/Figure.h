@@ -37,6 +37,8 @@ public:
 	virtual int getLargeur() const;
 	virtual int getHauteur() const;
 
+	virtual string getType() const;
+
 	virtual float calculerperimetre()=0;
 	virtual float calculerAire()=0;
 

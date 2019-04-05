@@ -370,7 +370,7 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 			int y = figureCourante->getY();
 			int rayon = figureCourante->getRayon();
 			int cote = figureCourante->getCote();
-			int longueur = figureCourante->getLongueur();
+			int hauteur = figureCourante->getHauteur();
 			int largeur = figureCourante->getLargeur();
 
 			
@@ -379,10 +379,10 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 			 {
 				 objetGraphique->DrawRectangle(crayon, x, y, cote, cote);
 			 }
-			 else if (longueur!=0) 
+			 else if (hauteur!=0) 
 			 {
 				
-				objetGraphique->DrawRectangle(crayon, x, y, longueur, largeur);
+				objetGraphique->DrawRectangle(crayon, x, y, hauteur, largeur);
 			
 			 }
 			 else

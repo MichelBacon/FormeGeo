@@ -18,6 +18,6 @@ class FormeRectangle:public Figure
 	int getHauteur() const;
 	virtual float calculerAire();
 	virtual float calculerperimetre();
-	virtual void selectionner(int,int);
+	virtual void Selectionner(int,int);
 };
 #endif

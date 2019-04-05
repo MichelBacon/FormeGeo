@@ -1,6 +1,7 @@
 #pragma once
 #include "cercle.h"
 #include "carre.h"
+#include "rectangle.h"
 #include "donnees.h"
 
 namespace formes_geo {
@@ -297,6 +298,7 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 			 comboFigure->Items->Add("");
 			 comboFigure->Items->Add("Carre");
 			 comboFigure->Items->Add("Cercle");
+			 comboFigure->Items->Add("Rectangle");
 			 figureCourante = NULL;
 			 InitialiserTextBox();
 		 }
@@ -322,6 +324,11 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 					{
 						figureCourante = new Carre();
 					}
+					else if (comboFigure->SelectedIndex == 3) 
+					{
+						figureCourante = new FormeRectangle();
+					
+					}
 					else
 					{
 						figureCourante = new Cercle();
@@ -336,6 +343,9 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 
 						figureCourante->setCote(Convert::ToInt32(textCote->Text));
 						figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
+
+						figureCourante->setHauteur(Convert::ToInt32(txtRectLargeur->Text));
+						figureCourante->setLargeur(Convert::ToInt32(txtRectLongueur->Text));
 					
 						lesFigures.AjouterFigure(figureCourante);
 

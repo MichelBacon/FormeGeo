@@ -31,6 +31,13 @@ int Carre::getCote() const
 	return cote;
 }
 
+
+string Carre::getType() const
+{
+
+	return "Carre";
+}
+
 float Carre::calculerperimetre() {
 
 	return cote *4;

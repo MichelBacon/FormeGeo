@@ -102,6 +102,25 @@ int Figure::getRayon() const
 //
 //}
 
+void Figure::setLargeur(int)
+{
+
+}
+
+void Figure::setHauteur(int)
+{
+
+}
+
+int Figure::getLargeur() const
+{
+	return 0;
+}
+
+int Figure::getHauteur() const
+{
+	return 0;
+}
 
 
 

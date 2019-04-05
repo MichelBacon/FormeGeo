@@ -32,6 +32,11 @@ public:
 	virtual void setRayon(int);
 	virtual int getRayon() const;
 
+	virtual void setLargeur(int);
+	virtual void setHauteur(int);
+	virtual int getLargeur() const;
+	virtual int getHauteur() const;
+
 	virtual float calculerperimetre()=0;
 	virtual float calculerAire()=0;
 

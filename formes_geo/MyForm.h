@@ -435,6 +435,8 @@ private: System::Void MyForm_MouseClick(System::Object^  sender, System::Windows
 					 textY->Text = figureCourante->getY().ToString();
 					 textCote->Text = figureCourante->getCote().ToString();
 					 textRayon->Text = figureCourante->getRayon().ToString();
+					 txtRectLongueur->Text = figureCourante->getLargeur().ToString();
+					 txtRectLargeur->Text = figureCourante->getHauteur().ToString();
 				 
 				 }
 				 
@@ -458,6 +460,8 @@ private: System::Void btnModifie_Click(System::Object^  sender, System::EventArg
 					figureCourante->setY(Convert::ToInt32(textY->Text));
 					figureCourante->setCote(Convert::ToInt32(textCote->Text));
 					figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
+					figureCourante->setHauteur(Convert::ToInt32(txtRectLargeur->Text));
+					figureCourante->setLargeur(Convert::ToInt32(txtRectLongueur->Text));
 
 				 }
 					

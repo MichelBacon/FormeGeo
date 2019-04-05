@@ -435,6 +435,8 @@ private: System::Void MyForm_MouseClick(System::Object^  sender, System::Windows
 					 textY->Text = figureCourante->getY().ToString();
 					 textCote->Text = figureCourante->getCote().ToString();
 					 textRayon->Text = figureCourante->getRayon().ToString();
+					 txtRectLongueur->Text = figureCourante->getLargeur().ToString();
+					 txtRectLargeur->Text = figureCourante->getHauteur().ToString();
 				 
 				 }
 				 

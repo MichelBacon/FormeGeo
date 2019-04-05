@@ -64,6 +64,7 @@ namespace formes_geo {
 		System::ComponentModel::Container ^components;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::TextBox^  textRayon;
+	private: System::Windows::Forms::Button^  btn_CalcAire;
 
 	private: System::Windows::Forms::Button^  btnModifie;
 
@@ -87,6 +88,7 @@ namespace formes_geo {
 			this->btnModifie = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textRayon = (gcnew System::Windows::Forms::TextBox());
+			this->btn_CalcAire = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label3
@@ -197,11 +199,22 @@ namespace formes_geo {
 			this->textRayon->Size = System::Drawing::Size(37, 20);
 			this->textRayon->TabIndex = 27;
 			// 
+			// btn_CalcAire
+			// 
+			this->btn_CalcAire->Location = System::Drawing::Point(304, 73);
+			this->btn_CalcAire->Name = L"btn_CalcAire";
+			this->btn_CalcAire->Size = System::Drawing::Size(121, 23);
+			this->btn_CalcAire->TabIndex = 29;
+			this->btn_CalcAire->Text = L"Calculer Aire";
+			this->btn_CalcAire->UseVisualStyleBackColor = true;
+			this->btn_CalcAire->Click += gcnew System::EventHandler(this, &MyForm::btn_CalcAire_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(892, 490);
+			this->Controls->Add(this->btn_CalcAire);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textRayon);
 			this->Controls->Add(this->btnModifie);
@@ -397,5 +410,21 @@ private: System::Void btnModifie_Click(System::Object^  sender, System::EventArg
 			 DessinerTout();
 		 }
 
+private: System::Void btn_CalcAire_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+	int cptFigure = 0;
+	listBoxFigures->Items->Clear();
+	listBoxFigures->Items->Add("Aires des figures:");
+	figureCourante = lesFigures.ObtenirFigure(cptFigure);
+	while (figureCourante != nullptr)
+	{
+
+		listBoxFigures->Items->Add(figureCourante->calculerAire());
+		cptFigure++;
+		figureCourante = lesFigures.ObtenirFigure(cptFigure);
+	}
+
+
+}
 };
 }

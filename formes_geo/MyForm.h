@@ -65,6 +65,11 @@ namespace formes_geo {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::TextBox^  textRayon;
 	private: System::Windows::Forms::Button^  btn_CalcAire;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::TextBox^  txtRectLargeur;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::TextBox^  txtRectLongueur;
+	private: System::Windows::Forms::Label^  label7;
 
 	private: System::Windows::Forms::Button^  btnModifie;
 
@@ -89,6 +94,11 @@ namespace formes_geo {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textRayon = (gcnew System::Windows::Forms::TextBox());
 			this->btn_CalcAire = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->txtRectLargeur = (gcnew System::Windows::Forms::TextBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->txtRectLongueur = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label3
@@ -166,7 +176,7 @@ namespace formes_geo {
 			// 
 			// btnCreerFigure
 			// 
-			this->btnCreerFigure->Location = System::Drawing::Point(15, 88);
+			this->btnCreerFigure->Location = System::Drawing::Point(11, 137);
 			this->btnCreerFigure->Name = L"btnCreerFigure";
 			this->btnCreerFigure->Size = System::Drawing::Size(127, 23);
 			this->btnCreerFigure->TabIndex = 25;
@@ -209,11 +219,56 @@ namespace formes_geo {
 			this->btn_CalcAire->UseVisualStyleBackColor = true;
 			this->btn_CalcAire->Click += gcnew System::EventHandler(this, &MyForm::btn_CalcAire_Click);
 			// 
+			// label5
+			// 
+			this->label5->Location = System::Drawing::Point(176, 141);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(46, 22);
+			this->label5->TabIndex = 33;
+			this->label5->Text = L"Largeur:";
+			// 
+			// txtRectLargeur
+			// 
+			this->txtRectLargeur->Location = System::Drawing::Point(246, 139);
+			this->txtRectLargeur->Name = L"txtRectLargeur";
+			this->txtRectLargeur->Size = System::Drawing::Size(37, 20);
+			this->txtRectLargeur->TabIndex = 32;
+			// 
+			// label6
+			// 
+			this->label6->Location = System::Drawing::Point(176, 113);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(69, 22);
+			this->label6->TabIndex = 31;
+			this->label6->Text = L"Longueur:";
+			// 
+			// txtRectLongueur
+			// 
+			this->txtRectLongueur->Location = System::Drawing::Point(246, 110);
+			this->txtRectLongueur->Name = L"txtRectLongueur";
+			this->txtRectLongueur->Size = System::Drawing::Size(37, 20);
+			this->txtRectLongueur->TabIndex = 30;
+			// 
+			// label7
+			// 
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(176, 87);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(69, 22);
+			this->label7->TabIndex = 34;
+			this->label7->Text = L"Rectangle";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(892, 490);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->txtRectLargeur);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->txtRectLongueur);
 			this->Controls->Add(this->btn_CalcAire);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textRayon);

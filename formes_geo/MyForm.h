@@ -432,17 +432,16 @@ private: System::Void MyForm_MouseClick(System::Object^  sender, System::Windows
 				 figureCourante->Selectionner(e->X, e->Y);
 
 				 if (figureCourante->EstSelectionne() == true) {
-				 
 					 textX->Text = figureCourante->getX().ToString();
 					 textY->Text = figureCourante->getY().ToString();
 					 textCote->Text = figureCourante->getCote().ToString();
 					 textRayon->Text = figureCourante->getRayon().ToString();
 					 txtRectLongueur->Text = figureCourante->getLargeur().ToString();
 					 txtRectLargeur->Text = figureCourante->getHauteur().ToString();
-				 
+
+					 MessageBox::Show(gcnew String(figureCourante->getType().c_str()));
+
 				 }
-				 
-				 
 
 				 cptFigure++;
 				 figureCourante = lesFigures.ObtenirFigure(cptFigure);

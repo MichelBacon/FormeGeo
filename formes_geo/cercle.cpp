@@ -66,3 +66,7 @@ void Cercle::Selectionner(int inX, int inY) {
 
 }
 
+string Cercle::getType() const
+{
+	return "Cercle";
+}

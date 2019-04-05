@@ -50,7 +50,7 @@ float FormeRectangle::calculerperimetre()
 	return (float)(largeur*2+hauteur*2);
 }
 
-void FormeRectangle::selectionner(int inX,int inY)
+void FormeRectangle::Selectionner(int inX,int inY)
 {
 	if ((inX > x) && (inX < (x + largeur)) && (inY > y) && (inY < (y + hauteur)))
 	{

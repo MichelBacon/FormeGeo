@@ -122,6 +122,9 @@ int Figure::getHauteur() const
 	return 0;
 }
 
-
+string Figure::getType() const
+{
+	return "";
+}
 
 

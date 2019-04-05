@@ -1,6 +1,7 @@
 #pragma once
 #include "cercle.h"
 #include "carre.h"
+#include "rectangle.h"
 #include "donnees.h"
 
 namespace formes_geo {
@@ -297,6 +298,7 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 			 comboFigure->Items->Add("");
 			 comboFigure->Items->Add("Carre");
 			 comboFigure->Items->Add("Cercle");
+			 comboFigure->Items->Add("Rectangle");
 			 figureCourante = NULL;
 			 InitialiserTextBox();
 		 }
@@ -307,6 +309,8 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 			 textY->Text = "0";
 			 textCote->Text = "0";
 			 textRayon->Text = "0";
+			 txtRectLargeur->Text = "0";
+			 txtRectLongueur->Text = "0";
 		 }
 
 private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs^  e) {
@@ -319,6 +323,11 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 					if (comboFigure->SelectedIndex == 1)
 					{
 						figureCourante = new Carre();
+					}
+					else if (comboFigure->SelectedIndex == 3) 
+					{
+						figureCourante = new FormeRectangle();
+					
 					}
 					else
 					{
@@ -334,6 +343,9 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 
 						figureCourante->setCote(Convert::ToInt32(textCote->Text));
 						figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
+
+						figureCourante->setHauteur(Convert::ToInt32(txtRectLargeur->Text));
+						figureCourante->setLargeur(Convert::ToInt32(txtRectLongueur->Text));
 					
 						lesFigures.AjouterFigure(figureCourante);
 
@@ -430,17 +442,16 @@ private: System::Void MyForm_MouseClick(System::Object^  sender, System::Windows
 				 figureCourante->Selectionner(e->X, e->Y);
 
 				 if (figureCourante->EstSelectionne() == true) {
-				 
 					 textX->Text = figureCourante->getX().ToString();
 					 textY->Text = figureCourante->getY().ToString();
 					 textCote->Text = figureCourante->getCote().ToString();
 					 textRayon->Text = figureCourante->getRayon().ToString();
 					 txtRectLongueur->Text = figureCourante->getLargeur().ToString();
 					 txtRectLargeur->Text = figureCourante->getHauteur().ToString();
-				 
+
+					 MessageBox::Show(gcnew String(figureCourante->getType().c_str()));
+
 				 }
-				 
-				 
 
 				 cptFigure++;
 				 figureCourante = lesFigures.ObtenirFigure(cptFigure);

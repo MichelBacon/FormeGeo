@@ -15,6 +15,8 @@ class Cercle:public Figure
     virtual void setRayon(int);
 	virtual int getRayon() const;
 
+	virtual string getType() const;
+
 	virtual float calculerperimetre();
 	virtual float calculerAire();
 

@@ -79,15 +79,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\FormeGeo-master\formes_geo\rectangle.cpp" />
     <ClCompile Include="carre.cpp" />
     <ClCompile Include="cercle.cpp" />
     <ClCompile Include="donnees.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\FormeGeo-master\formes_geo\rectangle.h" />
     <ClInclude Include="carre.h" />
     <ClInclude Include="cercle.h" />
     <ClInclude Include="donnees.h" />
@@ -95,6 +94,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="rectangle.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">

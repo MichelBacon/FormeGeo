@@ -45,13 +45,17 @@ float FormeRectangle::calculerAire()
 	return (float)(largeur*hauteur);
 }
 
-float FormeRectangle::calculerPerimetre()
+float FormeRectangle::calculerperimetre()
 {
 	return (float)(largeur*2+hauteur*2);
 }
 
 void FormeRectangle::selectionner(int inX,int inY)
 {
-	if ((inX>mX) && (inX<(mX+largeur)) && (inY>mY) && (inY<(mY+hauteur)))
+	if ((inX > x) && (inX < (x + largeur)) && (inY > y) && (inY < (y + hauteur)))
+	{
 		estSelectionne = true;
+	}
+
+		
 }
